@@ -10,7 +10,7 @@
 	<s:head />
 </head>
 <body>
-	Hello <s:property value="name"/>, today is <s:property value="dateNow" /><br/>
+	Hello <s:property value="user"/>, today is <s:property value="user" /><br/>
 
 </body>
 </html>

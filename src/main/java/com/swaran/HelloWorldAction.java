@@ -22,6 +22,7 @@ import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.RequiredFieldValidator;
 import com.opensymphony.xwork2.conversion.annotations.Conversion;
 import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
+import com.swaran.model.User;
 
 @Validation()
 @Conversion()
@@ -29,7 +30,19 @@ public class HelloWorldAction extends ActionSupport {
     
     private Date now;
     private String name;
-    
+
+    private User user;
+
+    public Date getNow() {
+        return now;
+    }
+
+    public void setNow(Date now) {
+        this.now = now;
+    }
+
+
+
     @TypeConversion(converter = "com.swaran.DateConverter")
     @RequiredFieldValidator(message = "Please enter the date")
     public void setDateNow(Date now) { this.now = now; }
@@ -40,7 +53,14 @@ public class HelloWorldAction extends ActionSupport {
     public String getName() { return this.name; }
     
     public String execute() throws Exception {
-        System.out.println(name);
+        System.out.println(user);
         return SUCCESS;
+    }
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
