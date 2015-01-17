@@ -5,39 +5,38 @@ package com.swaran.model;
  */
 public class User {
 
-    private String firstname;
-    private String lastname;
+    private String first;
+    private String last;
+
+    public String getFirst() {
+        return first;
+    }
+
+    public void setFirst(String first) {
+        this.first = first;
+    }
+
+    public String getLast() {
+        return last;
+    }
+
+    public void setLast(String last) {
+        this.last = last;
+    }
+
+    public User(String first, String last) {
+        this.first = first;
+        this.last = last;
+    }
 
     public User() {
-    }
-
-    public User(String firstname, String lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
+                "first='" + first + '\'' +
+                ", last='" + last + '\'' +
                 '}';
     }
 }

@@ -33,24 +33,19 @@ public class IndexAction extends ActionSupport {
 
     private static final long serialVersionUID = -8366209797454396351L;
 
-    private static List<User> userList = new ArrayList<User>();
+    private static ArrayList<User> userlist;
 
     private User user;
 
-    static {
-        userList.add(new User("Bill", "Gates"));
-        userList.add(new User("Steve", "Jobs"));
-        userList.add(new User("Larry", "Page"));
-        userList.add(new User("Sergey", "Brin"));
-        userList.add(new User("Larry", "Ellison"));
-    }
 
     /**
      * Action method to display user list. Uses <code>userList</code> array
      * object defined as class level attribute to display list of users.
      * @return SUCCESS
      */
+
     public String list() {
+
         return SUCCESS;
     }
 
@@ -63,17 +58,16 @@ public class IndexAction extends ActionSupport {
 
         System.out.println("User:"+user);
 
-        userList.add(user);
 
         return SUCCESS;
     }
 
-    public List<User> getUserList() {
-        return userList;
+    public static ArrayList<User> getUserlist() {
+        return userlist;
     }
 
-    public static void setUserList(List<User> userList) {
-        IndexAction.userList = userList;
+    public static void setUserlist(ArrayList<User> userlist) {
+        IndexAction.userlist = userlist;
     }
 
     public User getUser() {
