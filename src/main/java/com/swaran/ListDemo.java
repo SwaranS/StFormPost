@@ -9,9 +9,10 @@ import java.util.List;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.Preparable;
+import com.opensymphony.xwork2.interceptor.ParameterNameAware;
 import com.swaran.model.ValuePair;
 
-public class ListDemo extends ActionSupport implements ModelDriven<List<ValuePair>>, Preparable {
+public class ListDemo extends ActionSupport implements ModelDriven<List<ValuePair>>, Preparable,ParameterNameAware {
 
 
     private List<ValuePair> values;
@@ -37,6 +38,10 @@ public class ListDemo extends ActionSupport implements ModelDriven<List<ValuePai
         values = new ArrayList<ValuePair>();
         values.add(new ValuePair("chalk", "cheese"));
         values.add(new ValuePair("orange", "apple"));
+    }
+
+    public boolean acceptableParameterName(String parameterName) {
+        return false;
     }
 }
 
