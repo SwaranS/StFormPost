@@ -27,7 +27,7 @@ public class ListDemo extends ActionSupport implements ModelDriven<List<ValuePai
     public String execute() {
 
         for (ValuePair value : values) {
-            System.out.println(value.getValue1() + ":" + value.getValue2());
+            System.out.println(value.getValue1() + ":" + value.getValue2() +":" + value.getValue3());
         }
 
         return SUCCESS;
@@ -36,12 +36,12 @@ public class ListDemo extends ActionSupport implements ModelDriven<List<ValuePai
 
     public void prepare() {
         values = new ArrayList<ValuePair>();
-        values.add(new ValuePair("chalk", "cheese"));
-        values.add(new ValuePair("orange", "apple"));
+        values.add(new ValuePair("chalk", "cheese","C"));
+        values.add(new ValuePair("orange", "apple","D"));
     }
 
     public boolean acceptableParameterName(String parameterName) {
-        return false;
+        return true;
     }
 }
 
