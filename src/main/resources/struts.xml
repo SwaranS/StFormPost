@@ -11,13 +11,13 @@
 
         <default-action-ref name="index" />
 
-        <action name="index" class="com.swaran.ListDemo">
+        <action name="index" class="com.swaran.misc.ListDemo">
             <result>/WEB-INF/jsp/value.jsp</result>
         </action>
 
-        <action name="helloWorld" class="com.swaran.ListDemo">
-            <result name="input">/jsp/index.jsp</result>
-            <result>/WEB-INF/jsp/value.jsp</result>
+        <action name="helloWorld" class="com.swaran.misc.ListDemo">
+            <result name="input">/jsp/desiform.jsp</result>
+            <result>/WEB-INF/jsp/desiform.jsp</result>
         </action>
 
     </package>

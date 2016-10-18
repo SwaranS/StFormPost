@@ -13,16 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.swaran;
+package com.swaran.misc;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import com.opensymphony.xwork2.conversion.annotations.Conversion;
-import com.opensymphony.xwork2.conversion.annotations.TypeConversion;
 import com.swaran.model.User;
 
 /**

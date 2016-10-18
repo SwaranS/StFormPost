@@ -1,4 +1,4 @@
-package com.swaran;
+package com.swaran.misc;
 
 /**
  * Created by Home on 16/01/2015.

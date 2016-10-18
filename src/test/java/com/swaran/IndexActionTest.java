@@ -15,6 +15,7 @@
  */
 package com.swaran;
 
+import com.swaran.misc.IndexAction;
 import junit.framework.TestCase;
 
 import com.opensymphony.xwork2.Action;

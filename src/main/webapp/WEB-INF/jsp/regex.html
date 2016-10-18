@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Hello World</title>
+
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#msgid").html("This is Hello World by JQuery");
+    });
+
+    $(document).ready(function(){
+        $('#test1').blur(function(){
+            if (is_valid_date($(this).val())) {
+                $(this).css('background', '#dfd');
+            } else {
+                $(this).css('background', '#fdd');
+            }
+        });
+    });
+
+    $(document).ready(function(){
+        $('#test1').blur(function(){
+            if (is_valid_date($(this).val())) {
+                $(this).css('background', '#dfd');
+            } else {
+                $(this).css('background', '#fdd');
+            }
+        });
+    });
+
+    function is_valid_date(value) {
+        // capture all the parts
+        var matches = value.match(/^(\d{2})\.(\d{2})\.(\d{4}) (\d{2}):(\d{2}) (\d{2})$/);
+        if (matches === null) {
+            return false;
+        } else{
+            // now lets check the date sanity
+            var year = parseInt(matches[3], 10);
+            var month = parseInt(matches[2], 10) - 1; // months are 0-11
+            var day = parseInt(matches[1], 10);
+            var hour = parseInt(matches[4], 10);
+            var minute = parseInt(matches[5], 10);
+
+            var date = new Date(year, month, day, hour, minute);
+            if (date.getFullYear() !== year
+                    || date.getMonth() != month
+                    || date.getDate() !== day
+                    || date.getHours() !== hour
+                    || date.getMinutes() !== minute
+
+            ) {
+                return false;
+            } else {
+                return true;
+            }
+
+        }
+    }
+</script>
+
+<form>
+    <p>Enter date</p>
+    <input type="text" id="test1" value="22.05.2013 11:23 22"/>
+
+</form>
+
+<div id="msgid">
+</div>
+
+</body>
+</html>
