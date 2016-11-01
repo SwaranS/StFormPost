@@ -1,1 +1,2 @@
-See LoadEvaluator to set memory options
+See LoadEvaluator to set memory options.
+See IDRescorer
