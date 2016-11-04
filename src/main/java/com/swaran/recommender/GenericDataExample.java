@@ -49,7 +49,7 @@ public class GenericDataExample {
         FastIDSet candidateItems = null;
         try {
             candidateItems = strategy.getCandidateItems(2, new
-                    GenericUserPreferenceArray(prefsUser2), localDataModel);
+                    GenericUserPreferenceArray(prefsUser2), localDataModel,true);
         } catch (TasteException e) {
             e.printStackTrace();
         }
