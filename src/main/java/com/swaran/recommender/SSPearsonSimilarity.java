@@ -43,7 +43,7 @@ public class SSPearsonSimilarity {
 
         try {
             DataModel model =
-                    new FileDataModel(new File("C:\\Users\\Home\\Documents\\StFormPost\\src\\main\\resources\\noRating.csv"));
+                    new FileDataModel(new File("C:\\Users\\swara\\IdeaProjects\\StFormPost\\src\\main\\resources\\noRating.csv"));
             UserSimilarity similarity = new TanimotoCoefficientSimilarity(model);
             UserNeighborhood neighborhood = new ThresholdUserNeighborhood(0.1, similarity, model);
             UserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
