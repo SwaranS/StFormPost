@@ -5,3 +5,6 @@ AbstractBooleanPrefJDBCDataModel
 See ReloadFromJDBCDataModel
 MySQLBooleanPrefJDBCDataModel
 PostgreSQLBooleanPrefJDBCDataModel
+
+
+Check PlusAnonymousUserDataModel
