@@ -36,14 +36,20 @@ import org.apache.mahout.cf.taste.similarity.UserSimilarity;
  */
 public class SSPearsonSimilarity {
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
 
         try {
+            int concurrentUsers = 100;
             DataModel model =
                     new FileDataModel(new File("C:\\Users\\swara\\IdeaProjects\\StFormPost\\src\\main\\resources\\noRating.csv"));
+            PlusAnonymousConcurrentUserDataModel plusModel =
+                    new PlusAnonymousConcurrentUserDataModel(model, concurrentUsers);
             UserSimilarity similarity = new TanimotoCoefficientSimilarity(model);
             UserNeighborhood neighborhood = new ThresholdUserNeighborhood(0.1, similarity, model);
             UserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
+            Long anonymousUserID = plusModel.takeAvailableUser();
+            System.out.println(anonymousUserID);
+            PreferenceArray tempPrefs = new BooleanItemPreferenceArray(5);
             List recommendations = recommender.recommend(2, 6);
             for (Object recommendation : recommendations) {
                 System.out.println(recommendation);
